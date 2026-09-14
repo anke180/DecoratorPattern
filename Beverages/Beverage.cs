@@ -26,6 +26,24 @@ namespace DecoratorPattern.Beverages
             return description;
         }
 
-        public abstract double cost();
+        public virtual double cost()
+        {
+            if (Size == Size.TALL)
+            {
+                return cost() + 0.15;
+            }
+            else if (Size == Size.GRANDE)
+            {
+                return cost() +  0.20;
+            }
+            else if (Size == Size.VENDI)
+            {
+                return cost() + 0.25;
+            }
+            else
+            {
+                return cost();
+            }
+        }
     }
 }
