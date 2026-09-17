@@ -15,7 +15,7 @@ namespace DecoratorPattern
             PrintBeverage(doppio);
 
             Beverage lungo = new Espresso();
-            lungo = new Water(lungo);
+            lungo = new Condiments.Water(lungo);
             PrintBeverage(lungo);
 
             Beverage macchiato = new Espresso();
@@ -36,8 +36,8 @@ namespace DecoratorPattern
             PrintBeverage(cappucinno);
 
             Beverage americano = new Espresso();
-            americano = new Water(americano);
-            americano = new Water(americano);
+            americano = new Condiments.Water(americano);
+            americano = new Condiments.Water(americano);
             PrintBeverage(americano);
 
             Beverage cafeLatte = new Espresso();
@@ -56,12 +56,12 @@ namespace DecoratorPattern
             PrintBeverage(romana);
 
             Beverage morocchino = new Espresso();
-            morocchino = new Chocolate(morocchino);
+            morocchino = new Condiments.Chocolate(morocchino);
             morocchino = new MilkFoam(morocchino);
             PrintBeverage(morocchino);
 
             Beverage mocha = new Espresso();
-            mocha = new Chocolate(mocha);
+            mocha = new Condiments.Chocolate(mocha);
             mocha = new SteamedMilk(mocha);
             mocha = new Whip(mocha);
             PrintBeverage(mocha);
@@ -107,11 +107,10 @@ namespace DecoratorPattern
             glace = new IceCream(glace);
             PrintBeverage(glace);
 
-            // vragen hoe de chocolate dan nu moet
-            //Beverage chocolateMilk = new Chocolate();
-            //chocolateMilk = new Milk(chocolateMilk);
-            //chocolateMilk = new Milk(chocolateMilk);
-            //PrintBeverage(chocolateMilk);
+            Beverage chocolateMilk = new Beverages.Chocolate();
+            chocolateMilk = new Milk(chocolateMilk);
+            chocolateMilk = new Milk(chocolateMilk);
+            PrintBeverage(chocolateMilk);
 
             Beverage demiCreme = new Espresso();
             demiCreme = new Espresso(demiCreme);
