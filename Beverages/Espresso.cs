@@ -26,9 +26,9 @@ namespace DecoratorPattern.Beverages
         {
             if (baseBeverage != null)
             {
-                return 1.99 + baseBeverage.cost();
+                return 1.99 + base.cost() + baseBeverage.cost();
             }
-            return 1.99;
+            return 1.99 + base.cost();
         }
     }
 }
